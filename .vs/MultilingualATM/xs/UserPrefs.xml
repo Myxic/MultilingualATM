@@ -1,12 +1,8 @@
 ﻿<Properties StartupConfiguration="{6675DFDC-4E9A-4E93-BACC-FEE099EEBFF8}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="MultilingualATM/AtmOpearation.cs">
     <Files>
-      <File FileName="MultilingualATM/Program.cs" Line="59" Column="27" />
-      <File FileName="MultilingualATM/AtmOpearation.cs" Line="11" Column="66" />
+      <File FileName="MultilingualATM/Program.cs" Line="13" Column="1" />
+      <File FileName="MultilingualATM/AtmOpearation.cs" Line="188" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,9 +14,18 @@
           </Node>
         </State>
       </Pad>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="MultilingualATM" expanded="True" />
+        </State>
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.MultilingualATM PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
 </Properties>
