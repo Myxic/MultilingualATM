@@ -11,19 +11,11 @@ public class Program
         AtmOpearation LO = new AtmOpearation(200000);
 
 
-
-        //Console.WriteLine(LO.Withdrawal(2000));
-        //Console.WriteLine(LO.Withdrawal(2000));
-        //Console.WriteLine(LO.Withdrawal(2000));
-        //Console.WriteLine(LO.Withdrawal(20000));
-        //Console.WriteLine(LO.Withdrawal(200000));
-        //Console.WriteLine(LO.Transfer(2000));
-        //AtmOpearation.LanguageOptions("1");
-
     }
 
     public static void Run()
     {
+        Console.Clear();
         Console.WriteLine("TYPE 1 for English");
         Console.WriteLine("Тип 2 для русского");
         Console.WriteLine("类型 3 中文");
