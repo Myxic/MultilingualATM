@@ -1,0 +1,22 @@
+﻿using static MultilingualATM.AtmOpearation;
+
+namespace MultilingualATM;
+class Program
+{
+    static void Main(string[] args)
+    {
+        Dictionary<string, int> Amount = new Dictionary<string, int>
+            {   {"User1", 1234},
+                {"User2", 5678},
+                {"User3", 6969}
+            };
+
+        Console.Write("Enter YOUR EXISTING Username:  ");
+
+        string? Input1 = Console.ReadLine();
+
+
+
+    }
+}
+

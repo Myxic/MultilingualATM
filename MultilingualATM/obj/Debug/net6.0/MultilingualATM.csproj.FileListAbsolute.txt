@@ -1,0 +1,15 @@
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/bin/Debug/net6.0/MultilingualATM
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/bin/Debug/net6.0/MultilingualATM.deps.json
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/bin/Debug/net6.0/MultilingualATM.runtimeconfig.json
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/bin/Debug/net6.0/MultilingualATM.dll
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/bin/Debug/net6.0/MultilingualATM.pdb
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/obj/Debug/net6.0/MultilingualATM.csproj.AssemblyReference.cache
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/obj/Debug/net6.0/MultilingualATM.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/obj/Debug/net6.0/MultilingualATM.AssemblyInfoInputs.cache
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/obj/Debug/net6.0/MultilingualATM.AssemblyInfo.cs
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/obj/Debug/net6.0/MultilingualATM.csproj.CoreCompileInputs.cache
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/obj/Debug/net6.0/MultilingualATM.dll
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/obj/Debug/net6.0/refint/MultilingualATM.dll
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/obj/Debug/net6.0/MultilingualATM.pdb
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/obj/Debug/net6.0/MultilingualATM.genruntimeconfig.cache
+/Users/mac/Desktop/My c# Projects/MultilingualATM/MultilingualATM/obj/Debug/net6.0/ref/MultilingualATM.dll

@@ -1,0 +1,157 @@
+﻿using System;
+using static MultilingualATM.AtmOpearation;
+
+namespace MultilingualATM
+{
+
+
+     class AtmOpearation
+    {
+        private readonly Dictionary<UserInterface, int> Amount;
+        readonly UserInterface IUser1 = new IUser1();
+        readonly UserInterface IUser2 = new IUser2();
+        readonly UserInterface IUser3 = new IUser3();
+
+        public decimal _money;
+
+
+        public AtmOpearation()
+        {
+            Amount = new Dictionary<UserInterface, int>
+            {   {IUser1, 2000},
+                {IUser2, 10000},
+                { IUser3, 3000}
+            };
+
+        }
+
+        public AtmOpearation(decimal money)
+        {
+           
+            _money = money ; 
+        }
+
+        public interface UserInterface
+        {
+            void Balance();
+            void Withdraw();
+            void Transfer();
+        }
+
+        public static void LanguageOptions(string? num)
+        {
+            
+            switch (num)
+            {
+                case "1":
+                    Console.WriteLine("hey");
+                   
+                    break;
+                case "2":
+                    Console.WriteLine("hey2");
+                    break;
+                case "3":
+                    Console.WriteLine("hey3");
+                    break;
+                default:
+                    break;
+            }
+          
+
+
+        }
+       
+        public void Balance()
+        {
+            //decimal money = new AtmOpearation()._money;
+
+            //return money;
+            Console.WriteLine($"{_money}");
+        }
+        //private decimal Withdrawal(decimal withdraw)
+        //{
+        //    if (withdraw < Balance())
+        //    {
+                
+        //    }
+        //    return Balance();
+        //}
+        //private static decimal Transfer(decimal transfer)
+        //{
+        //    if (transfer < Balance()) {  
+
+        //    }
+        //    return Balance();
+        //}
+        
+        private static void English()
+        {
+
+        }
+        private static void Russian()
+        {
+
+        }
+        private static void Chinese()
+        {
+
+        }
+    }
+
+
+    public class IUser1 : UserInterface
+    {
+        public void Withdraw()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Balance()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Transfer()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class IUser2 : UserInterface
+    {
+        public void Withdraw()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Balance()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Transfer()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class IUser3 : UserInterface
+    {
+        public void Withdraw()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Balance()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Transfer()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+
+
+
+
