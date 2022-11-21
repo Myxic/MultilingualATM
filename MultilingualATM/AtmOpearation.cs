@@ -1,44 +1,41 @@
 ﻿using System;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography.X509Certificates;
 using static MultilingualATM.AtmOpearation;
+using static MultilingualATM.Program;
 
 namespace MultilingualATM
 {
 
 
-     class AtmOpearation
+    class AtmOpearation
     {
-      
-        readonly UserInterface IUser1 = new IUser1();
-        readonly UserInterface IUser2 = new IUser2();
-        readonly UserInterface IUser3 = new IUser3();
 
-        public static decimal _money ;
+        public static decimal _money;
 
 
 
 
         public AtmOpearation(decimal money)
         {
-           
-            _money = money ; 
-        }
 
-        public interface UserInterface
+            _money = money;
+        }
+        public AtmOpearation()
         {
-            void English();
-            void Russian();
-            void Chinese();
+
         }
 
-        private void OperationOptions()
+
+
+        public void OperationOptions()
         {
             Console.WriteLine("Enter 1 for Balance, 2 for Withdraw, 3 for Transfer");
             string? Operation = Console.ReadLine();
 
             switch (Operation)
             {
-                 
+
                 case "1":
                     Console.Clear();
                     Console.Write("Balance is: ");
@@ -57,7 +54,7 @@ namespace MultilingualATM
                     Console.Clear();
                     Console.WriteLine("Enter Amount To Withdraw");
                     string withdraw = Console.ReadLine();
-                    decimal WithdrawFee = Convert.ToInt32(withdraw);
+                    decimal WithdrawFee = Convert.ToDecimal(withdraw);
                     Console.WriteLine(Withdrawal(WithdrawFee));
 
                     Console.WriteLine("Do you want to perform another operation? Enter Y to cancel");
@@ -72,10 +69,13 @@ namespace MultilingualATM
                 case "3":
                     Console.Clear();
                     Console.WriteLine("Enter Amount To Transfer");
-                    string transfer = Console.ReadLine();
-                    decimal TransferFee = Convert.ToInt32(transfer);
+                    string? transfer = Console.ReadLine();
+                    Console.WriteLine("Who do you want to send to");
+                    string? reciever = Console.ReadLine();
 
-                    Console.WriteLine(Transfer(TransferFee));
+                    decimal TransferFee = Convert.ToDecimal(transfer);
+
+                    Console.WriteLine(Transfer(TransferFee, reciever));
 
                     Console.WriteLine("Do you want to perform another operation? Enter Y to cancel");
                     string? Continue3 = Console.ReadLine();
@@ -84,20 +84,20 @@ namespace MultilingualATM
                         Console.Clear();
                         OperationOptions();
                     }
-                             Program.Run();
-      
-                    
+                    Program.Run();
+
+
                     break;
                 default:
                     break;
             }
-            
 
 
-            
+
+
         }
 
-        private void RussianOperationOptions()
+        public void RussianOperationOptions()
         {
             Console.WriteLine("Введите 1 для баланса, 2 для снятия, 3 для перевода");
             string? Operation = Console.ReadLine();
@@ -140,8 +140,9 @@ namespace MultilingualATM
                     Console.WriteLine("Введите сумму для перевода");
                     string transfer = Console.ReadLine();
                     decimal TransferFee = Convert.ToInt32(transfer);
-
-                    Console.WriteLine(Transfer(TransferFee));
+                    Console.WriteLine("Кому вы хотите отправить");
+                    string? reciever = Console.ReadLine();
+                    Console.WriteLine(Transfer(TransferFee, reciever));
 
                     Console.WriteLine("Вы хотите выполнить другую операцию? Введите Y, чтобы отменить");
                     string? Continue3 = Console.ReadLine();
@@ -163,7 +164,7 @@ namespace MultilingualATM
 
         }
 
-        private void ChineseOperationOptions()
+        public void ChineseOperationOptions()
         {
             Console.WriteLine("余额输入1，提款输入2，转账输入3");
             string? Operation = Console.ReadLine();
@@ -206,8 +207,9 @@ namespace MultilingualATM
                     Console.WriteLine("输入转账金额");
                     string transfer = Console.ReadLine();
                     decimal TransferFee = Convert.ToInt32(transfer);
-
-                    Console.WriteLine(Transfer(TransferFee));
+                    Console.WriteLine("你想送给谁");
+                    string? reciever = Console.ReadLine();
+                    Console.WriteLine(Transfer(TransferFee, reciever));
 
                     Console.WriteLine("是否要执行其他操作？ 输入 Y 继续");
                     string? Continue3 = Console.ReadLine();
@@ -230,45 +232,61 @@ namespace MultilingualATM
         }
 
 
-        private void Operation(Dictionary<string,string>Login, string Username)
+        private void Operation(Dictionary<string, string> Login, string Username)
         {
-                int tries = 0;
-                int PossibleTries = 5;
+            int tries = 0;
+            int PossibleTries = 5;
+            UserInterface User1 = new IUser1();
+            UserInterface User2 = new IUser2();
+            UserInterface User3 = new IUser3();
 
 
+            while (tries < PossibleTries)
+            {
+                Console.Write("Enter YOUR EXISTING Pin:  ");
 
-                while (tries < PossibleTries)
+                string? Password = Console.ReadLine();
+                Console.WriteLine(Login[Username.ToLower()]);
+
+                if (Password == Login[Username.ToLower()])
                 {
-                    Console.Write("Enter YOUR EXISTING Pin:  ");
+                    Console.Clear();
+                    Console.WriteLine("Logged in");
+                    Console.WriteLine($"Welcome {Username.ToUpper()} What Operation do you want to perform");
 
-                    string? Password = Console.ReadLine();
-                    Console.WriteLine(Login[Username.ToLower()]);
-
-                    if (Password == Login[Username.ToLower()])
+                    if (Username.ToLower() == "user1")
                     {
-                        Console.Clear();
-                        Console.WriteLine("Logged in");
-                        Console.WriteLine($"Welcome {Username.ToUpper()} What Operation do you want to perform");
-                       
-
-                        OperationOptions();
-
-                        break;
-                    }
-                    else
+                        User1.English();
+                    }else if (Username.ToLower() == "user2")
                     {
-                        Console.Clear();
+                        User2.English();
                     }
+                    else if (Username.ToLower() == "user2")
+                    {
+                        User3.English();
+
+                    }
+
+                    OperationOptions();
+
+                    break;
                 }
+                else
+                {
+                    Console.Clear();
+                }
+            }
 
-            
-           
+
+
         }
         private void RussianOperation(Dictionary<string, string> Login, string Username)
         {
             int tries = 0;
             int PossibleTries = 5;
-
+            UserInterface User1 = new IUser1();
+            UserInterface User2 = new IUser2();
+            UserInterface User3 = new IUser3();
 
 
             while (tries < PossibleTries)
@@ -285,7 +303,19 @@ namespace MultilingualATM
                     Console.WriteLine($"Добро пожаловать{Username.ToUpper()} Какую задачу вы хотите выполнить");
 
 
-                    RussianOperationOptions();
+                    if (Username.ToLower() == "user1")
+                    {
+                        User1.Russian();
+                    }
+                    else if (Username.ToLower() == "user2")
+                    {
+                        User2.Russian();
+                    }
+                    else if (Username.ToLower() == "user2")
+                    {
+                        User3.Russian();
+
+                    }
 
                     break;
                 }
@@ -302,7 +332,9 @@ namespace MultilingualATM
         {
             int tries = 0;
             int PossibleTries = 5;
-
+            UserInterface User1 = new IUser1();
+            UserInterface User2 = new IUser2();
+            UserInterface User3 = new IUser3();
 
 
             while (tries < PossibleTries)
@@ -319,7 +351,19 @@ namespace MultilingualATM
                     Console.WriteLine($"欢迎 {Username.ToUpper()} 你想执行什么任务");
 
 
-                    ChineseOperationOptions();
+                    if (Username.ToLower() == "user1")
+                    {
+                        User1.Chinese();
+                    }
+                    else if (Username.ToLower() == "user2")
+                    {
+                        User2.Chinese();
+                    }
+                    else if (Username.ToLower() == "user2")
+                    {
+                        User3.Chinese();
+
+                    }
 
                     break;
                 }
@@ -341,7 +385,7 @@ namespace MultilingualATM
         {
             if (withdraw < Balance())
             {
-               _money =  Balance() - withdraw;
+                _money = Balance() - withdraw;
 
             }
             else
@@ -350,11 +394,29 @@ namespace MultilingualATM
             }
             return Balance();
         }
-        private decimal Transfer(decimal transfer)
+        private decimal Transfer(decimal transfer, string reciever)
         {
+            List<decimal> _Amount = new StartingMoney()._Amount;
+            
+
             if (transfer < Balance())
             {
                 _money = Balance() - transfer;
+
+                if (reciever.ToLower() == "user1")
+                {
+
+                    _Amount[0] += transfer;
+
+                }else if (reciever.ToLower() == "user2")
+                {
+                    _Amount[1] += transfer;
+                }
+                else if (reciever.ToLower() == "user3")
+                {
+                    _Amount[2] += transfer;
+                }
+               
             }
             else
             {
@@ -365,6 +427,8 @@ namespace MultilingualATM
 
         public void English(Dictionary<string, string> Login)
         {
+           
+
             Console.Write("Enter YOUR EXISTING Username:  ");
 
             string? Username = Console.ReadLine();
@@ -372,6 +436,7 @@ namespace MultilingualATM
 
             if (Login.ContainsKey(Username.ToLower()))
             {
+
                 Operation(Login, Username);
             }
             else
@@ -400,8 +465,8 @@ namespace MultilingualATM
             }
         }
 
-    
-        public  void Chinese(Dictionary<string, string> Login)
+
+        public void Chinese(Dictionary<string, string> Login)
         {
             Console.Write("输入您现有的用户名:  ");
 
@@ -419,66 +484,106 @@ namespace MultilingualATM
                 Chinese(Login);
             }
         }
-    
+
+    }
+    public interface UserInterface
+    {
+        void English();
+        void Russian();
+        void Chinese();
     }
 
+    public class ImplementInterface
+    {
+        public void English(UserInterface user)
+        {
+
+        }
+        public void Russian(UserInterface user)
+        {
+
+        }
+        public void Chinese(UserInterface user)
+        {
+
+        }
+    }
 
     public class IUser1 : UserInterface
     {
 
+
         public void English()
         {
-            English();
+            StartingMoney IntialAmount = new StartingMoney();
+            AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
+            ATM.OperationOptions();
         }
 
         public void Russian()
         {
-            Russian();
+            StartingMoney IntialAmount = new StartingMoney();
+            AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
+            ATM.RussianOperationOptions();
         }
 
         public void Chinese()
         {
-            Chinese();
+            StartingMoney IntialAmount = new StartingMoney();
+            AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
+            ATM.ChineseOperationOptions();
         }
     }
     public class IUser2 : UserInterface
     {
-        public void Chinese()
-        {
-            throw new NotImplementedException();
-        }
-
         public void English()
         {
-            throw new NotImplementedException();
+            StartingMoney IntialAmount = new StartingMoney();
+            AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount());
+            ATM.OperationOptions(); 
         }
 
         public void Russian()
         {
-            throw new NotImplementedException();
+            StartingMoney IntialAmount = new StartingMoney();
+            AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount());
+            ATM.RussianOperationOptions(); 
+        }
+
+        public void Chinese()
+        {
+            StartingMoney IntialAmount = new StartingMoney();
+            AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount());
+            ATM.ChineseOperationOptions(); 
         }
     }
     public class IUser3 : UserInterface
     {
-        public void Chinese()
-        {
-            throw new NotImplementedException();
-        }
-
         public void English()
         {
-            throw new NotImplementedException();
+            StartingMoney IntialAmount = new StartingMoney();
+            AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount());
+            ATM.OperationOptions();
         }
 
         public void Russian()
         {
-            throw new NotImplementedException();
+            StartingMoney IntialAmount = new StartingMoney();
+            AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount());
+            ATM.RussianOperationOptions(); 
         }
+
+        public void Chinese()
+        {
+            StartingMoney IntialAmount = new StartingMoney();
+            AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount());
+            ATM.ChineseOperationOptions(); 
+        }
+
+
     }
-
-   
+  
 }
-
 
 
 
