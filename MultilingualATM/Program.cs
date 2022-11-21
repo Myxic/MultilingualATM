@@ -34,35 +34,53 @@ public class Program
 
     public class StartingMoney
     {
-        private List<decimal> _Amount;
+        public  static List<decimal> _Amount;
 
         public StartingMoney()
         {
             _Amount = new List<decimal> { 2000000, 12000000, 200040090 };
         }
-
+        public decimal First_Amount()
+        {
+            return _Amount[0];
+        }
+        public decimal Second_Amount()
+        {
+            return _Amount[1];
+        }
+        public decimal Third_Amount()
+        {
+            return _Amount[2];
+        }
     }
 
 
     public static void LanguageOptions(string? num)
     {
-        AtmOpearation LO = new AtmOpearation(200000);
+       
+
+        AtmOpearation ATM = new AtmOpearation();
         Dictionary<string, string> Login = new Dictionary<string, string>
             {   {"user1", "1234"},
                 {"user2", "5678"},
                 {"user3", "6969"}
             };
+
+
+
+
+
         switch (num)
         {
             case "1":
-                LO.English(Login);
+                ATM.English(Login);
 
                 break;
             case "2":
-                LO.Russian(Login);
+                ATM.Russian(Login);
                 break;
             case "3":
-                LO.Chinese(Login);
+                ATM.Chinese(Login);
                 break;
             case "4":
                 break;
@@ -76,6 +94,20 @@ public class Program
 
 
     }
+    //class hey
+    //{
+    //    public static void heyhey()
+    //    {
+    //        string? user = Console.ReadLine();
+    //        int a = 0;
+    //        if (int.TryParse(user, out a))
+    //        {
+
+    //        }
+    //    }
+    //}
+
+
 
 
 
