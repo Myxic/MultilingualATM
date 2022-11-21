@@ -19,6 +19,7 @@ public class Program
         Console.WriteLine("TYPE 1 for English");
         Console.WriteLine("Тип 2 для русского");
         Console.WriteLine("类型 3 中文");
+        Console.WriteLine("Type 4 to Cancel");
 
         string? language = Console.ReadLine(); 
 
@@ -30,6 +31,19 @@ public class Program
 
 
     }
+
+    public class StartingMoney
+    {
+        private List<decimal> _Amount;
+
+        public StartingMoney()
+        {
+            _Amount = new List<decimal> { 2000000, 12000000, 200040090 };
+        }
+
+    }
+
+
     public static void LanguageOptions(string? num)
     {
         AtmOpearation LO = new AtmOpearation(200000);
@@ -50,6 +64,8 @@ public class Program
             case "3":
                 LO.Chinese(Login);
                 break;
+            case "4":
+                break;
             default:
                 Console.WriteLine("Enter Valid Option");
                 Run();
@@ -58,7 +74,10 @@ public class Program
 
 
 
+
     }
+
+
 
 }
 

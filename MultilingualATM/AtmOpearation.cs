@@ -8,7 +8,7 @@ namespace MultilingualATM
 
      class AtmOpearation
     {
-        //private readonly Dictionary<UserInterface, int> Amount;
+      
         readonly UserInterface IUser1 = new IUser1();
         readonly UserInterface IUser2 = new IUser2();
         readonly UserInterface IUser3 = new IUser3();
@@ -16,15 +16,7 @@ namespace MultilingualATM
         public static decimal _money ;
 
 
-        //public AtmOpearation()
-        //{
-        //    Amount = new Dictionary<UserInterface, int>
-        //    {   {IUser1, 2000},
-        //        {IUser2, 10000},
-        //        { IUser3, 3000}
-        //    };
 
-        //}
 
         public AtmOpearation(decimal money)
         {
@@ -34,9 +26,9 @@ namespace MultilingualATM
 
         public interface UserInterface
         {
-            void Balance();
-            void Withdraw();
-            void Transfer();
+            void English();
+            void Russian();
+            void Chinese();
         }
 
         private void OperationOptions()
@@ -433,56 +425,61 @@ namespace MultilingualATM
 
     public class IUser1 : UserInterface
     {
-        public void Withdraw()
+
+        public void English()
         {
-            throw new NotImplementedException();
+            English();
         }
 
-        public void Balance()
+        public void Russian()
         {
-            throw new NotImplementedException();
+            Russian();
         }
 
-        public void Transfer()
+        public void Chinese()
         {
-            throw new NotImplementedException();
+            Chinese();
         }
     }
     public class IUser2 : UserInterface
     {
-        public void Withdraw()
+        public void Chinese()
         {
             throw new NotImplementedException();
         }
 
-        public void Balance()
+        public void English()
         {
             throw new NotImplementedException();
         }
 
-        public void Transfer()
+        public void Russian()
         {
             throw new NotImplementedException();
         }
     }
     public class IUser3 : UserInterface
     {
-        public void Withdraw()
+        public void Chinese()
         {
             throw new NotImplementedException();
         }
 
-        public void Balance()
+        public void English()
         {
             throw new NotImplementedException();
         }
 
-        public void Transfer()
+        public void Russian()
         {
             throw new NotImplementedException();
         }
     }
+
+   
 }
+
+
 
 
 
