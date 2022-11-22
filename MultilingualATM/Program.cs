@@ -34,23 +34,48 @@ public class Program
 
     public class StartingMoney
     {
-        public  static List<decimal> _Amount;
+        public static  List<decimal> _Amount;
+        public static decimal num;
+        public static decimal num2;
+        public static decimal num3;
+        //public List<decimal> _Amount
+        //{
+        //    get { return this.amount; }
+        //    //set { this.amount = value; }
+        //}
 
         public StartingMoney()
         {
-            _Amount = new List<decimal> { 2000000, 12000000, 200040090 };
+            _Amount = new List<decimal> { 2000000, 12000000, 2000400900 };
         }
         public decimal First_Amount()
         {
-            return _Amount[0];
+            decimal Total = TransferUser2() + _Amount[0];
+            return Total;
         }
         public decimal Second_Amount()
         {
-            return _Amount[1];
+            decimal Total = TransferUser2() + _Amount[1];
+            return Total;
         }
         public decimal Third_Amount()
         {
-            return _Amount[2];
+            decimal Total = TransferUser2() + _Amount[2];
+            return Total;
+        }
+
+        public static decimal TransferUser1()
+        {
+           
+            return num;
+        }
+        public static decimal TransferUser2()
+        {
+            return num2;
+        }
+        public static decimal TransferUser3()
+        {
+            return num3;
         }
     }
 
@@ -83,6 +108,8 @@ public class Program
                 ATM.Chinese(Login);
                 break;
             case "4":
+                Console.Clear();
+                Console.WriteLine("Thanks for choosing us");
                 break;
             default:
                 Console.WriteLine("Enter Valid Option");
