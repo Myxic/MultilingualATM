@@ -8,7 +8,7 @@ public class Program
 
 
         Program.Run();
-        //AtmOpearation LO = new AtmOpearation(200000);
+        
 
 
     }
@@ -21,7 +21,9 @@ public class Program
         Console.WriteLine("类型 3 中文");
         Console.WriteLine("Type 4 to Cancel");
 
-        string? language = Console.ReadLine(); 
+        string? language = Console.ReadLine();
+
+        Console.Clear();
 
         LanguageOptions(language);
 
