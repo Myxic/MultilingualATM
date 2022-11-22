@@ -79,7 +79,7 @@ public class Program
 
     public class StartingMoney
     {
-        public static List<decimal> _Amount;
+        public static List<decimal>? _Amount;
         public static decimal num;
         public static decimal num2;
         public static decimal num3;
@@ -91,7 +91,7 @@ public class Program
         }
         public decimal First_Amount()
         {
-            decimal Total = TransferUser2() + _Amount[0];
+            decimal Total = TransferUser1() + _Amount[0];
             return Total;
         }
         public decimal Second_Amount()
@@ -101,7 +101,7 @@ public class Program
         }
         public decimal Third_Amount()
         {
-            decimal Total = TransferUser2() + _Amount[2];
+            decimal Total = TransferUser3() + _Amount[2];
             return Total;
         }
 
