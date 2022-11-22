@@ -57,7 +57,7 @@ namespace MultilingualATM
                 case "2":
                     Console.Clear();
                     Console.WriteLine("Enter Amount To Withdraw");
-                    string withdraw = Console.ReadLine();
+                    string? withdraw = Console.ReadLine();
                     decimal WithdrawFee = Convert.ToDecimal(withdraw);
                     Console.WriteLine(Withdrawal(WithdrawFee, Fund, NoFund));
 
@@ -142,7 +142,7 @@ namespace MultilingualATM
                 case "2":
                     Console.Clear();
                     Console.WriteLine("Введите сумму для вывода");
-                    string withdraw = Console.ReadLine();
+                    string? withdraw = Console.ReadLine();
                     decimal WithdrawFee = Convert.ToDecimal(withdraw);
                     Console.WriteLine(Withdrawal(WithdrawFee, Fund, NoFund));
 
@@ -158,7 +158,7 @@ namespace MultilingualATM
                 case "3":
                     Console.Clear();
                     Console.WriteLine("Введите сумму для перевода");
-                    string transfer = Console.ReadLine();
+                    string? transfer = Console.ReadLine();
                     decimal TransferFee = Convert.ToDecimal(transfer);
                     Console.WriteLine("Кому вы хотите отправить");
                     string? reciever = Console.ReadLine();
@@ -334,6 +334,7 @@ namespace MultilingualATM
 
 
         }
+
         private void RussianOperation(Dictionary<string, string> Login, string Username)
         {
             int tries = 0;
