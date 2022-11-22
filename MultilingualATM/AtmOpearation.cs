@@ -380,7 +380,7 @@ namespace MultilingualATM
 
         private decimal Balance()
         {
-            return _money;
+            return _money ;
 
         }
 
