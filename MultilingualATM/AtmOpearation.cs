@@ -42,8 +42,8 @@ namespace MultilingualATM
 
                 case "1":
                     Console.Clear();
-                    Console.Write("Balance is: ");
-                    Console.WriteLine(Balance(Fund));
+                    Console.Write("Balance is: ₦");
+                    Console.WriteLine(Balance());
 
                     Console.WriteLine("Do you want to perform another operation? Enter Y to continue");
                     string? Continue = Console.ReadLine();
@@ -57,6 +57,7 @@ namespace MultilingualATM
                 case "2":
                     Console.Clear();
                     Console.WriteLine("Enter Amount To Withdraw");
+                    Console.Write("₦ ");
                     string? withdraw = Console.ReadLine();
                     decimal WithdrawFee = Convert.ToDecimal(withdraw);
                     Console.WriteLine(Withdrawal(WithdrawFee, Fund, NoFund));
@@ -73,6 +74,7 @@ namespace MultilingualATM
                 case "3":
                     Console.Clear();
                     Console.WriteLine("Enter Amount To Transfer");
+                    Console.Write("₦ ");
                     string? transfer = Console.ReadLine();
                     Console.WriteLine("Who do you want to send to");
                     string? reciever = Console.ReadLine();
@@ -127,8 +129,8 @@ namespace MultilingualATM
 
                 case "1":
                     Console.Clear();
-                    Console.Write("Баланс: ");
-                    Console.WriteLine(Balance(Fund));
+                    Console.Write("Баланс: ₦");
+                    Console.WriteLine(Balance());
 
                     Console.WriteLine("Вы хотите выполнить другую операцию? Введите Y, чтобы продолжить");
                     string? Continue = Console.ReadLine();
@@ -142,6 +144,7 @@ namespace MultilingualATM
                 case "2":
                     Console.Clear();
                     Console.WriteLine("Введите сумму для вывода");
+                    Console.Write("₦ ");
                     string? withdraw = Console.ReadLine();
                     decimal WithdrawFee = Convert.ToDecimal(withdraw);
                     Console.WriteLine(Withdrawal(WithdrawFee, Fund, NoFund));
@@ -158,6 +161,7 @@ namespace MultilingualATM
                 case "3":
                     Console.Clear();
                     Console.WriteLine("Введите сумму для перевода");
+                    Console.Write("₦ ");
                     string? transfer = Console.ReadLine();
                     decimal TransferFee = Convert.ToDecimal(transfer);
                     Console.WriteLine("Кому вы хотите отправить");
@@ -211,8 +215,8 @@ namespace MultilingualATM
 
                 case "1":
                     Console.Clear();
-                    Console.Write("余额是: ");
-                    Console.WriteLine(Balance(Fund));
+                    Console.Write("余额是: ₦");
+                    Console.WriteLine(Balance());
 
                     Console.WriteLine("是否要执行其他操作？ 输入 Y 继续");
                     string? Continue = Console.ReadLine();
@@ -226,6 +230,7 @@ namespace MultilingualATM
                 case "2":
                     Console.Clear();
                     Console.WriteLine("输入取款金额");
+                    Console.Write("₦ ");
                     string withdraw = Console.ReadLine();
                     decimal WithdrawFee = Convert.ToDecimal(withdraw);
                     Console.WriteLine(Withdrawal(WithdrawFee, Fund, NoFund));
@@ -242,6 +247,7 @@ namespace MultilingualATM
                 case "3":
                     Console.Clear();
                     Console.WriteLine("输入转账金额");
+                    Console.Write("₦ ");
                     string transfer = Console.ReadLine();
                     decimal TransferFee = Convert.ToDecimal(transfer);
                     Console.WriteLine("你想送给谁");
@@ -433,37 +439,38 @@ namespace MultilingualATM
 
         }
 
-        private decimal Balance(string Fund)
+        private decimal Balance()
         {
-            Console.Write($"{Fund}  ");
+            
             return _money ;
 
         }
 
         private decimal Withdrawal(decimal withdraw, string Fund, string NoFund)
         {
-            if (withdraw < Balance(Fund))
+            if (withdraw < Balance())
             {
-                _money = Balance(Fund) - withdraw;
+                _money = Balance() - withdraw;
 
             }
             else
             {
                 Console.Clear();
                 Console.WriteLine($"{NoFund.ToUpper()}");
-                Console.WriteLine($"{Balance(Fund)} < {withdraw} ?????");
+                Console.WriteLine($"{Balance()} < {withdraw} ?????");
             }
-            return Balance(Fund);
+            Console.Write($"{Fund}");
+            return Balance();
         }
 
         private decimal Transfer(string User, decimal transfer, string reciever, string Fund, string NoFund)
         {
-            IUser3 user3 = new IUser3();
+            
            
 
-            if (transfer < Balance(Fund))
+            if (transfer < Balance())
             {
-                _money = Balance(Fund) - transfer;
+                _money = Balance() - transfer;
 
                 if (User.ToLower() == "user1")
                 {
@@ -497,9 +504,11 @@ namespace MultilingualATM
             {
                 Console.Clear();
                 Console.WriteLine($"{NoFund.ToUpper()}");
-                Console.WriteLine($"{Balance(Fund)} < {transfer} ?????");
+                Console.WriteLine($"{Balance()} < {transfer} ?????");
             }
-            return Balance(Fund);
+
+            Console.Write($"{Fund}");
+            return Balance();
         }
 
         public void English(Dictionary<string, string> Login)
@@ -599,21 +608,21 @@ namespace MultilingualATM
         {
         StartingMoney IntialAmount = new StartingMoney();
             AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
-            ATM.OperationOptions("user1", "Cash Balance", "Insufficient  Funds");
+            ATM.OperationOptions("user1", "Cash Balance  ₦", "Insufficient  Funds");
         }
 
         public void Russian()
         {
             StartingMoney IntialAmount = new StartingMoney();
             AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
-            ATM.RussianOperationOptions("user1", "Денежных баланс", "Недостаточно средств");
+            ATM.RussianOperationOptions("user1", "Денежных баланс  ₦", "Недостаточно средств");
         }
 
         public void Chinese()
         {
             StartingMoney IntialAmount = new StartingMoney();
             AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
-            ATM.ChineseOperationOptions("user1", "现金余额", "不充足的资金");
+            ATM.ChineseOperationOptions("user1", "现金余额  ₦", "不充足的资金");
         }
     }
 
@@ -625,21 +634,21 @@ namespace MultilingualATM
         {
             StartingMoney IntialAmount = new StartingMoney();
             AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount() );
-            ATM.OperationOptions("user2", "Cash Balance", "Insufficient  Funds"); 
+            ATM.OperationOptions("user2", "Cash Balance  ₦", "Insufficient  Funds"); 
         }
 
         public void Russian()
         {
             StartingMoney IntialAmount = new StartingMoney();
             AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount());
-            ATM.RussianOperationOptions("user2", "Денежных баланс", "Недостаточно средств"); 
+            ATM.RussianOperationOptions("user2", "Денежных баланс  ₦", "Недостаточно средств"); 
         }
 
         public void Chinese()
         {
             StartingMoney IntialAmount = new StartingMoney();
             AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount());
-            ATM.ChineseOperationOptions("user2", "现金余额", "不充足的资金"); 
+            ATM.ChineseOperationOptions("user2", "现金余额  ₦", "不充足的资金"); 
         }
     }
 
@@ -652,21 +661,21 @@ namespace MultilingualATM
         {
             StartingMoney IntialAmount = new StartingMoney();
             AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount() );
-            ATM.OperationOptions("user3", "Cash Balance", "Insufficient  Funds");
+            ATM.OperationOptions("user3", "Cash Balance  ₦", "Insufficient  Funds");
         }
 
         public void Russian()
         {
             StartingMoney IntialAmount = new StartingMoney();
             AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount() );
-            ATM.RussianOperationOptions("user3", "Денежных баланс", "Недостаточно средств"); 
+            ATM.RussianOperationOptions("user3", "Денежных баланс  ₦", "Недостаточно средств"); 
         }
 
         public void Chinese()
         {
             StartingMoney IntialAmount = new StartingMoney();
             AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount());
-            ATM.ChineseOperationOptions("user3", "现金余额", "不充足的资金"); 
+            ATM.ChineseOperationOptions("user3", "现金余额  ₦", "不充足的资金"); 
         }
 
 

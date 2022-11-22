@@ -1,8 +1,15 @@
 ﻿<Properties StartupConfiguration="{6675DFDC-4E9A-4E93-BACC-FEE099EEBFF8}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.MultilingualATM PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="MultilingualATM/AtmOpearation.cs">
     <Files>
-      <File FileName="MultilingualATM/Program.cs" Line="13" Column="1" />
-      <File FileName="MultilingualATM/AtmOpearation.cs" Line="188" Column="4" />
+      <File FileName="MultilingualATM/AtmOpearation.cs" Line="247" Column="37" />
+      <File FileName="MultilingualATM/Program.cs" Line="103" Column="70" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,13 +26,14 @@
           <Node name="MultilingualATM" expanded="True" />
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>StartingMoney</Value>
+          <Value>ChineseOperation()</Value>
+          <Value>private decimal Transfer(decimal transfer, string reciever)</Value>
+          <Value>namespace MultilingualATM</Value>
+        </State>
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.MultilingualATM PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
 </Properties>
