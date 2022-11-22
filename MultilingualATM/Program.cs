@@ -8,7 +8,7 @@ public class Program
 
 
         Program.Run();
-        AtmOpearation LO = new AtmOpearation(200000);
+        //AtmOpearation LO = new AtmOpearation(200000);
 
 
     }
@@ -32,52 +32,7 @@ public class Program
 
     }
 
-    public class StartingMoney
-    {
-        public static  List<decimal> _Amount;
-        public static decimal num;
-        public static decimal num2;
-        public static decimal num3;
-        //public List<decimal> _Amount
-        //{
-        //    get { return this.amount; }
-        //    //set { this.amount = value; }
-        //}
-
-        public StartingMoney()
-        {
-            _Amount = new List<decimal> { 2000000, 12000000, 2000400900 };
-        }
-        public decimal First_Amount()
-        {
-            decimal Total = TransferUser2() + _Amount[0];
-            return Total;
-        }
-        public decimal Second_Amount()
-        {
-            decimal Total = TransferUser2() + _Amount[1];
-            return Total;
-        }
-        public decimal Third_Amount()
-        {
-            decimal Total = TransferUser2() + _Amount[2];
-            return Total;
-        }
-
-        public static decimal TransferUser1()
-        {
-           
-            return num;
-        }
-        public static decimal TransferUser2()
-        {
-            return num2;
-        }
-        public static decimal TransferUser3()
-        {
-            return num3;
-        }
-    }
+  
 
 
     public static void LanguageOptions(string? num)
@@ -121,21 +76,49 @@ public class Program
 
 
     }
-    //class hey
-    //{
-    //    public static void heyhey()
-    //    {
-    //        string? user = Console.ReadLine();
-    //        int a = 0;
-    //        if (int.TryParse(user, out a))
-    //        {
 
-    //        }
-    //    }
-    //}
+    public class StartingMoney
+    {
+        public static List<decimal> _Amount;
+        public static decimal num;
+        public static decimal num2;
+        public static decimal num3;
 
 
+        public StartingMoney()
+        {
+            _Amount = new List<decimal> { 2000000, 12000000, 2000400900 };
+        }
+        public decimal First_Amount()
+        {
+            decimal Total = TransferUser2() + _Amount[0];
+            return Total;
+        }
+        public decimal Second_Amount()
+        {
+            decimal Total = TransferUser2() + _Amount[1];
+            return Total;
+        }
+        public decimal Third_Amount()
+        {
+            decimal Total = TransferUser2() + _Amount[2];
+            return Total;
+        }
 
+        public static decimal TransferUser1()
+        {
+
+            return num;
+        }
+        public static decimal TransferUser2()
+        {
+            return num2;
+        }
+        public static decimal TransferUser3()
+        {
+            return num3;
+        }
+    }
 
 
 }
