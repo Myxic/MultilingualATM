@@ -1,4 +1,5 @@
-﻿using static MultilingualATM.AtmOpearation;
+﻿using System.Web;
+using static MultilingualATM.AtmOpearation;
 
 namespace MultilingualATM;
 
@@ -73,6 +74,7 @@ public class Program
             case "4":
                 Console.Clear();
                 Console.WriteLine("Thanks for choosing us");
+               Environment.Exit(0);
                 break;
             default:
                 Console.WriteLine("Enter Valid Option");

@@ -29,7 +29,7 @@ namespace MultilingualATM
 
         public void OperationOptions(string User, string Fund, string NoFund)
         {
-            Console.WriteLine("Enter 1 for Balance, 2 for Withdraw, 3 for Transfer, 4 to Return to main menu");
+            Console.WriteLine("Enter 1 for Balance, \n2 for Withdraw, \n3 for Transfer, \n4 to Return to main menu");
             string? Operation = Console.ReadLine();
 
             switch (Operation)
@@ -54,7 +54,16 @@ namespace MultilingualATM
                     Console.WriteLine("Enter Amount To Withdraw");
                     Console.Write("₦ ");
                     string? withdraw = Console.ReadLine();
-                    decimal WithdrawFee = Convert.ToDecimal(withdraw);
+
+                    bool isFeeValid = decimal.TryParse(withdraw, out decimal WithdrawFee);
+                    if (!isFeeValid)
+                    {
+
+                        WithdrawFee = 0;
+                    }
+
+
+                    //decimal WithdrawFee = Convert.ToDecimal(withdraw);
                     Console.WriteLine(Withdrawal(WithdrawFee, Fund, NoFund));
 
                     Console.WriteLine("Do you want to perform another operation? Enter Y to continue");
@@ -74,8 +83,13 @@ namespace MultilingualATM
                     Console.WriteLine("Who do you want to send to");
                     string? reciever = Console.ReadLine();
 
-                    decimal TransferFee = Convert.ToDecimal(transfer);
+                    //decimal TransferFee = Convert.ToDecimal(transfer);
+                    bool isTransferFeeValid = decimal.TryParse(transfer, out decimal TransferFee);
+                    if (!isTransferFeeValid)
+                    {
 
+                        TransferFee = 0;
+                    }
                     if (User == "user1")
                     {
                         Console.WriteLine(Transfer(User,TransferFee, reciever, Fund, NoFund));
@@ -116,7 +130,7 @@ namespace MultilingualATM
 
         public void RussianOperationOptions(string User, string Fund, string NoFund)
         {
-            Console.WriteLine("Введите 1 для баланса, 2 для снятия, 3 для перевода, 4, чтобы вернуться в главное меню");
+            Console.WriteLine("Введите 1 для баланса, \n2 для снятия, \n3 для перевода, \n4, чтобы вернуться в главное меню");
             string? Operation = Console.ReadLine();
 
             switch (Operation)
@@ -141,7 +155,13 @@ namespace MultilingualATM
                     Console.WriteLine("Введите сумму для вывода");
                     Console.Write("₦ ");
                     string? withdraw = Console.ReadLine();
-                    decimal WithdrawFee = Convert.ToDecimal(withdraw);
+                    //decimal WithdrawFee = Convert.ToDecimal(withdraw);
+                    bool isFeeValid = decimal.TryParse(withdraw, out decimal WithdrawFee);
+                    if (!isFeeValid)
+                    {
+
+                        WithdrawFee = 0;
+                    }
                     Console.WriteLine(Withdrawal(WithdrawFee, Fund, NoFund));
 
                     Console.WriteLine("Вы хотите выполнить другую операцию? Введите Y, чтобы продолжить");
@@ -158,7 +178,13 @@ namespace MultilingualATM
                     Console.WriteLine("Введите сумму для перевода");
                     Console.Write("₦ ");
                     string? transfer = Console.ReadLine();
-                    decimal TransferFee = Convert.ToDecimal(transfer);
+                    bool isTransferFeeValid = decimal.TryParse(transfer, out decimal TransferFee);
+                    if (!isTransferFeeValid)
+                    {
+
+                        TransferFee = 0;
+                    }
+                    //decimal TransferFee = Convert.ToDecimal(transfer);
                     Console.WriteLine("Кому вы хотите отправить");
                     string? reciever = Console.ReadLine();
                     
@@ -202,7 +228,7 @@ namespace MultilingualATM
 
         public void ChineseOperationOptions(string User, string Fund, string NoFund)
         {
-            Console.WriteLine("余额输入1，提款输入2，转账输入3, 4 返回主菜单");
+            Console.WriteLine("余额输入1，\n提款输入2，\n转账输入3, \n4 返回主菜单");
             string? Operation = Console.ReadLine();
 
             switch (Operation)
@@ -227,7 +253,13 @@ namespace MultilingualATM
                     Console.WriteLine("输入取款金额");
                     Console.Write("₦ ");
                     string withdraw = Console.ReadLine();
-                    decimal WithdrawFee = Convert.ToDecimal(withdraw);
+                    //decimal WithdrawFee = Convert.ToDecimal(withdraw);
+                    bool isFeeValid = decimal.TryParse(withdraw, out decimal WithdrawFee);
+                    if (!isFeeValid)
+                    {
+
+                        WithdrawFee = 0;
+                    }
                     Console.WriteLine(Withdrawal(WithdrawFee, Fund, NoFund));
 
                     Console.WriteLine("是否要执行其他操作？ 输入 Y 继续");
@@ -244,7 +276,13 @@ namespace MultilingualATM
                     Console.WriteLine("输入转账金额");
                     Console.Write("₦ ");
                     string transfer = Console.ReadLine();
-                    decimal TransferFee = Convert.ToDecimal(transfer);
+                    //decimal TransferFee = Convert.ToDecimal(transfer);
+                    bool isTransferFeeValid = decimal.TryParse(transfer, out decimal TransferFee);
+                    if (!isTransferFeeValid)
+                    {
+
+                        TransferFee = 0;
+                    }
                     Console.WriteLine("你想送给谁");
                     string? reciever = Console.ReadLine();
                     if (User == "user1")
