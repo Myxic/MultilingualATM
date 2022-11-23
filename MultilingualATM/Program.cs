@@ -1,6 +1,16 @@
 ﻿using static MultilingualATM.AtmOpearation;
 
 namespace MultilingualATM;
+
+
+/*So the idea in this code is to simulate a real time ATM where we already have an existing User(User1,User2,User3)
+ * Here they enter a password (ALREADY EXISTING) the ATM does 4 operation(Language(3 different types), Checking Balance, Withdrawal and Tranfer,
+ * The opeartion when user1 tranfer money to user2 or user3 , they should be able to get the money and the money will be removed from user1.
+ * and also endless loop lol
+ *          {"user1", "1234"},
+            {"user2", "5678"},
+            {"user3", "6969"}
+ */
 public class Program
 {
     static void Main(string[] args)
@@ -26,10 +36,6 @@ public class Program
         Console.Clear();
 
         LanguageOptions(language);
-
-       
-
-       
 
 
     }
@@ -93,23 +99,37 @@ public class Program
 
         public StartingMoney()
         {
+            
+            
             _Amount = new List<decimal> { 2000000, 12000000, 2000400900 };
         }
         public decimal First_Amount()
         {
-            decimal Total = TransferUser1() + _Amount[0] - DebitUser1();
+            int Idx1 = (int) MyEnum.First;
+            decimal Total = TransferUser1() + _Amount[Idx1] - DebitUser1();
             return Total;
         }
         public decimal Second_Amount()
         {
-            decimal Total = TransferUser2() + _Amount[1] - DebitUser2();
+            int Idx2 = (int)MyEnum.Second;
+            decimal Total = TransferUser2() + _Amount[Idx2] - DebitUser2();
             return Total;
         }
         public decimal Third_Amount()
         {
-            decimal Total = TransferUser3() + _Amount[2] - DebitUser3();
+            int Idx3 = (int)MyEnum.Third;
+            decimal Total = TransferUser3() + _Amount[Idx3] - DebitUser3();
             return Total;
         }
+        enum MyEnum
+        {
+            First,
+            Second,
+            Third
+        }
+       
+     
+
 
         public static decimal TransferUser1()
         {
