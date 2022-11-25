@@ -1,15 +1,24 @@
 ﻿<Properties StartupConfiguration="{6675DFDC-4E9A-4E93-BACC-FEE099EEBFF8}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="MultilingualATM/AtmOpearation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StartingMoney.cs">
     <Files>
-      <File FileName="MultilingualATM/AtmOpearation.cs" Line="250" Column="41" />
-      <File FileName="MultilingualATM/Program.cs" Line="26" Column="25" />
+      <File FileName="MultilingualATM/AtmOpearation.cs" Line="231" Column="57" NotebookId="1" />
+      <File FileName="MultilingualATM/Program.cs" Line="90" Column="4" NotebookId="1" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="10" Y="787" Width="1388" Height="701">
+        <Files>
+          <File FileName="StartingMoney.cs" Line="9" Column="6" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Applications/Visual Studio.app/StartingMoney.cs" line="1" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.MultilingualATM PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
