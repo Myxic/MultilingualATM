@@ -17,7 +17,7 @@ namespace MultilingualATM
         {
 
 
-            _Amount = new List<decimal> { 20000000, 12000000, 2000400900 };
+            _Amount = new List<decimal> { (decimal)Money.AmountUser1, (decimal)Money.AmountUser2, (decimal)Money.AmountUser3 };
         }
         public decimal First_Amount()
         {
@@ -47,7 +47,7 @@ namespace MultilingualATM
         {
             AmountUser1 = 20000000,
             AmountUser2 = 12000000,
-            AmountUser3 = 2000400900 
+            AmountUser3 = 2000400900
         }
 
 

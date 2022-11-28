@@ -1,16 +1,21 @@
 ﻿<Properties StartupConfiguration="{6675DFDC-4E9A-4E93-BACC-FEE099EEBFF8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StartingMoney.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MultilingualATM/StartingMoney.cs">
     <Files>
-      <File FileName="MultilingualATM/AtmOpearation.cs" Line="231" Column="57" NotebookId="1" />
-      <File FileName="MultilingualATM/Program.cs" Line="90" Column="4" NotebookId="1" />
+      <File FileName="MultilingualATM/AtmOpearation.cs" Line="196" Column="22" />
+      <File FileName="MultilingualATM/Program.cs" Line="90" Column="4" />
+      <File FileName="MultilingualATM/StartingMoney.cs" Line="4" Column="12" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="10" Y="787" Width="1388" Height="701">
-        <Files>
-          <File FileName="StartingMoney.cs" Line="9" Column="6" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MultilingualATM" expanded="True">
+            <Node name="MultilingualATM" expanded="True">
+              <Node name="StartingMoney.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />

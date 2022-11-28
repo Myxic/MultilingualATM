@@ -481,7 +481,7 @@ namespace MultilingualATM
 
         private decimal Withdrawal(decimal withdraw, string Fund, string NoFund)
         {
-            if (withdraw < Balance())
+            if (withdraw < Balance() )
             {
                 _money = Balance() - withdraw;
 
